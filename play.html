@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<body>
 
 		<canvas id="myCanvas" width="600" height="600"></canvas>
 
 		<button type="button" onclick="yes()">Yes</button>
 		<button type="button" onclick="no()">No</button>
-		
 
-		<p id="text"></p>
+
+		<p id="question"></p>
 
 		<script>
 			var canvas = document.getElementById("myCanvas");
@@ -22,44 +18,42 @@
 				ctx.fillStyle = "#0095DD";
 				ctx.fillText("Hello: ", 8, 20);
 			}
-			
+
 			//----------- code for questions -----------------------------
-			function Question(text, yes, no){
-				this.text = text;
+			function Question(question, yes, no){
+				this.question = question;
 				this.yes = yes;
 				this.no = no;
 			}
-			
+
 			function find(choice) {
 				if (choice in dictionary) {
 					return dictionary[choice];
 				}
 				return null;
 			}
-			
+
 			var robotics = new Question("You are a girl growing up in Bay Area who wants to join a robtics team at your high school, but they are all boys. Do you join?", "secretary", "wisdata");
 		 	var secretary = new Question("The boys tell you to be secretary instead of participating in the design of the robot. Will you do it?", "DATA", "pageant");
 			var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "DATA", "interview");
 			var interview = new Question("5 years later. You get an interview at a startup and you go in formalo pants and no makeup. The interviewer makes a snarky comment. Do you defend yourself?", "money", "theend");
 			var money = new Question("You get a job at a different company. Your male counterparts get paid more than you. Do you ask for a raise?", "girl power", "theend");
-			
+
 			var dictionary = {};
 		 	dictionary[robotics.yes] = secretary;
 			dictionary[secretary.no] = pageant;
 			dictionary[pageant.no] = interview;
 			dictionary[interview.yes] = money;
-
 		 	var current = robotics;
-			document.getElementById("text").innerHTML = current.text;
+			document.getElementById("question").innerHTML = current.question;
 			function yes(){
 				current = find(current.yes);
-				document.getElementById("text").innerHTML = current.text;
+				document.getElementById("question").innerHTML = current.question;
 			}
 			function no(){
 				current = find(current.no);
-				document.getElementById("text").innerHTML = current.text;
+				document.getElementById("question").innerHTML = current.question;
 			}
-
 		</script>
 	</body>
 </html>
