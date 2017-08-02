@@ -3,6 +3,8 @@
 	<body>
 
 		<canvas id="myCanvas" width="600" height="600"></canvas>
+		<button type="button" onclick="yes()">Yes</button>
+		<button type="button" onclick="no()">No</button>
 
 		
 
@@ -14,14 +16,12 @@
 			var ctx = canvas.getContext("2d");
 
 			function yes(){
-				if (choice == "yes") {
-		 			following = find(choice);
-		 		}
+				document.getElementByID("p").innerHTML = "yes";
+				choice = "yes";
 			}
 			function no(){
-				if (choice == "no") {
-					following = find(choice);
-				}
+				document.getElementByID("p").innerHTML = "no";
+				choice = "no";
 			}
 
 			function itemTouched(pointer) {
@@ -63,8 +63,12 @@
 		 	while (current != null) {
 		 		ctx.fillText(current.question, 8, yPos);
 				
-		 		<button type="button" onclick="yes()">Yes</button>
-				<button type="button" onclick="no()">No</button>
+		 		if (choice == "yes") {
+		 			following = find(choice);
+		 		}
+				if (choice == "no") {
+					following = find(choice);
+				}
 		 		
 
 		 		current = following;
