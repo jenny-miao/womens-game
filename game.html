@@ -4,10 +4,6 @@
 
 <canvas id="myCanvas" width="480" height="320"></canvas>
 <button type="button" onclick="alert('Hello world!')">Click Me!</button>
-	
-
-</body>
-</html>
 <script>
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
@@ -49,8 +45,9 @@
  	
  	var current = robotics;
  	var following = undefined;
+	var yPos = 20;
  	while (current != null) {
- 		ctx.fillText(current.question, 20, 20);
+ 		ctx.fillText(current.question, 20, yPos);
  		var choice = prompt();
  		
  		if (choice == "yes") {
@@ -61,6 +58,12 @@
 		}
 		
  		current = following;
+		yPos += 20;
 	}
 	
 </script>
+
+	
+
+</body>
+</html>
