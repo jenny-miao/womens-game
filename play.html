@@ -2,7 +2,7 @@
 <html>
 	<body>
 
-		<canvas id="myCanvas" width="480" height="320"></canvas>
+		<canvas id="myCanvas" width="600" height="600"></canvas>
 
 		<button type="button" onclick="yes()">Yes</button>
 		<button type="button" onclick="no()">No</button>
@@ -54,9 +54,10 @@
 			
 
 		 	var current = robotics;
-		 	var following = undefined
+		 	var following = undefined;
+			var yPos = 20;
 		 	while (current != null) {
-		 		ctx.fillText(current.question, 100, 100);
+		 		ctx.fillText(current.question, 8, yPos);
 		 		var choice = "ok";
 
 		 		if (choice == "yes") {
@@ -67,6 +68,7 @@
 				}
 
 		 		current = following;
+				yPos += 20;
 			}
 			
 		</script>
