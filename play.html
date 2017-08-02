@@ -3,45 +3,32 @@
 	<body>
 
 		<canvas id="myCanvas" width="600" height="600"></canvas>
+
 		<button type="button" onclick="yes()">Yes</button>
 		<button type="button" onclick="no()">No</button>
 
-		
-
+		<p id="question">First question:</p>
 		<p id="p"></p>
-		<img class="img-responsive" src="img/Screenshot (33).png" alt="girl">
 
 		<script>
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
-
-			function yes(){
-				document.getElementByID("p").innerHTML = "yes";
-			}
-			function no(){
-				document.getElementByID("p").innerHTML = "no";
-			}
-
 			function itemTouched(pointer) {
 		    		ctx.font = "16px Arial";
 				ctx.fillStyle = "#0095DD";
 				ctx.fillText("Hello: ", 8, 20);
 			}
-
-
 			function Question(question, yes, no){
 				this.question = question;
 				this.yes = yes;
 				this.no = no;
 			}
-
 			function find(choice) {
 				if (choice in dictionary) {
 					return dictionary[choice];
 				}
 				return null;
 			}
-
 			var robotics = new Question("You are a girl growing up in Bay Area who wants to join a robtics team at your high school, but they are all boys. Do you join?", "secretary", "wisdata");
 		 	var secretary = new Question("The boys tell you to be secretary instead of participating in the design of the robot. Will you do it?", "DATA", "pageant");
 			var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "DATA", "interview");
@@ -52,27 +39,19 @@
 			dictionary[secretary.no] = pageant;
 			dictionary[pageant.no] = interview;
 			dictionary[interview.yes] = money;
-			
 
 		 	var current = robotics;
-		 	var following = undefined;
-			var choice = undefined;
-			var yPos = 20;
-		 	while (current != null) {
-		 		ctx.fillText(current.question, 8, yPos);
-				
-		 		if (choice == "yes") {
-		 			following = find(choice);
-		 		}
-				if (choice == "no") {
-					following = find(choice);
-				}
-		 		
-
-		 		current = following;
-				yPos += 20;
+			function yes(){
+				document.getElementById("p").innerHTML = "yes";
+				current = find(current.yes);
+				document.getElementById("question").innerHTML = current.question;
 			}
-			
+			function no(){
+				document.getElementById("p").innerHTML = "no";
+				current = find(current.no);
+				document.getElementById("question").innerHTML = current.question;
+			}
+
 		</script>
 	</body>
 </html>
