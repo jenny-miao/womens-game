@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+function yes(){
+	<p>Hello</p>
+}
+function no(){
+	<p>bye</p>
+}
+<button type="button" onclick="yes()">Yes</button>
+<button type="button" onclick="no()">No</button>
+<script>
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	//newimg = sprite_add("https://s-media-cache-ak0.pinimg.com/736x/9b/a2/57/9ba25796112cad616be27e473ae1e149--kids-cartoon-characters-childhood-characters.jpg",1,false,false,0,0);
+	//draw_sprite(newimg,-1,32,32);
+	
+	
+	
+	//this.game.input.onDown.add(itemTouched, this);
+	function itemTouched(pointer) {
+    		ctx.font = "16px Arial";
+		ctx.fillStyle = "#0095DD";
+		ctx.fillText("Hello: ", 8, 20);
+	}
+	
+	ctx.font = "16px Arial";
+    	ctx.fillStyle = "#0095DD";
+	
+	
+	
+	
+	function Question(question, yes, no){
+		this.question = question;
+		this.yes = yes;
+		this.no = no;
+	}
+	
+	function find(choice) {
+		if (choice in dictionary) {
+			return dictionary[choice];
+		}
+		return null;
+	}
+	
+	var robotics = new Question("hi", "yes", "no");
+ 	var secretary = new Question("secretary", "yes", "no");
+  	var dictionary = {};
+ 	dictionary[robotics.yes] = secretary;
+ 	
+ 	var current = robotics;
+ 	var following = undefined;
+	var yPos = 20;
+ 	while (current != null) {
+ 		ctx.fillText(current.question, 20, yPos);
+ 		var choice = "ok";
+ 		
+ 		if (choice == "yes") {
+ 			following = find(choice);
+ 		}
+ 		if (choice == "no") {
+			following = find(choice);
+		}
+		
+ 		current = following;
+		yPos += 20;
+	}
+	
+</script>
+
+	
+
+</body>
+</html>
