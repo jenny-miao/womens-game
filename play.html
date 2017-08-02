@@ -16,13 +16,15 @@
 
 			function yes(){
 				document.getElementById("p").innerHTML = "yes";
+				choice = "yes";
 			}
 			function no(){
 				document.getElementById("p").innerHTML = "no";
+				choice = "no";
 			}
 
 			function itemTouched(pointer) {
-		    ctx.font = "16px Arial";
+		    		ctx.font = "16px Arial";
 				ctx.fillStyle = "#0095DD";
 				ctx.fillText("Hello: ", 8, 20);
 			}
@@ -46,7 +48,7 @@
 			var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "DATA", "interview");
 			var interview = new Question("5 years later. You get an interview at a startup and you go in formalo pants and no makeup. The interviewer makes a snarky comment. Do you defend yourself?", "money", "theend");
 			var money = new Question("You get a job at a different company. Your male counterparts get paid more than you. Do you ask for a raise?", "girl power", "theend");
-		  var dictionary = {};
+		  	var dictionary = {};
 		 	dictionary[robotics.yes] = secretary;
 			dictionary[secretary.no] = pageant;
 			dictionary[pageant.no] = interview;
@@ -55,11 +57,11 @@
 
 		 	var current = robotics;
 		 	var following = undefined;
+			var choice = undefined;
 			var yPos = 20;
 		 	while (current != null) {
 		 		ctx.fillText(current.question, 8, yPos);
-		 		var choice = "ok";
-
+				
 		 		if (choice == "yes") {
 		 			following = find(choice);
 		 		}
