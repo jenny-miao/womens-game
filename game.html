@@ -56,12 +56,12 @@ function no(){
 	var yPos = 20;
  	while (current != null) {
  		ctx.fillText(current.question, 20, yPos);
- 		//var choice = "yes";
+ 		var choice = "ok";
  		
  		if (choice == "yes") {
  			following = find(choice);
  		}
- 		else {
+ 		if (choice == "no") {
 			following = find(choice);
 		}
 		
