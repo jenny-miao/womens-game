@@ -9,13 +9,7 @@
 	var ctx = canvas.getContext("2d");
 	//newimg = sprite_add("https://s-media-cache-ak0.pinimg.com/736x/9b/a2/57/9ba25796112cad616be27e473ae1e149--kids-cartoon-characters-childhood-characters.jpg",1,false,false,0,0);
 	//draw_sprite(newimg,-1,32,32);
-	var buttonEnclave = this.add.button(10, 10, 'logo-encave', this.clickEnclave, this);
-	this.game.input.onDown.add(itemTouched, this);
-	function itemTouched(pointer) {
-    		ctx.font = "16px Arial";
-		ctx.fillStyle = "#0095DD";
-		ctx.fillText("Hello: ", 8, 20);
-	}
+	var buttonEnclave = this.add.button(10, 10, 'start', this.clickEnclave, this);
 	
 	ctx.font = "16px Arial";
     	ctx.fillStyle = "#0095DD";
@@ -37,7 +31,28 @@
 		return null;
 	}
 	
+	var robotics = new Question("hi", "yes", "no");
+	var secretary = new Question("secretary", "yes", "no");
 	var dictionary = {};
+	dictionary[robotics.yes : secretary];
+	
+	var current = robotics;
+	var following = undefined;
+	while (current != null) {
+		console.log(current.question);
+		var choice = prompt();
+		
+		if (choice == "yes") {
+			following = find(choice);
+		}
+		else {
+			following = find(choice);
+		}
+		
+		current = following;
+	}
+	
+	
 	
 </script>
 
