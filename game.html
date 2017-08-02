@@ -19,9 +19,8 @@
 		ctx.fillText("Hello: ", 8, 20);
 	}
 	
-	//ctx.font = "16px Arial";
-    	//ctx.fillStyle = "#0095DD";
-    	ctx.fillText("Score: ", 8, 20);
+	ctx.font = "16px Arial";
+    	ctx.fillStyle = "#0095DD";
 	
 	
 	
@@ -47,7 +46,7 @@
  	var current = robotics;
  	var following = undefined;
  	while (current != null) {
- 		console.log(current.question);
+ 		ctx.fillText(current.question, 20, 20);
  		var choice = prompt();
  		
  		if (choice == "yes") {
