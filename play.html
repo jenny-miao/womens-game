@@ -33,10 +33,6 @@
 				return null;
 			}
 			
-			function printSentence(sentence) {
-				document.getElementById("text").innerHTML = sentence.text;
-			}
-			
 			var robotics = new Question("You are a girl growing up in Bay Area who wants to join a robtics team at your high school, but they are all boys. Do you join?", "secretary", "wisdata");
 		 	var secretary = new Question("The boys tell you to be secretary instead of participating in the design of the robot. Will you do it?", "DATA", "pageant");
 			var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "DATA", "interview");
@@ -53,11 +49,11 @@
 			document.getElementById("text").innerHTML = current.text;
 			function yes(){
 				current = find(current.yes);
-				printSentence(current);
+				document.getElementById("text").innerHTML = current.text;
 			}
 			function no(){
 				current = find(current.no);
-				printSentence(current);
+				document.getElementById("text").innerHTML = current.text;
 			}
 
 		</script>
