@@ -7,7 +7,7 @@
 		<button type="button" onclick="yes()">Yes</button>
 		<button type="button" onclick="no()">No</button>
 
-		<p id="question">First question:</p>
+		<p id="question"></p>
 		<p id="p"></p>
 
 		<script>
@@ -41,6 +41,7 @@
 			dictionary[interview.yes] = money;
 
 		 	var current = robotics;
+			document.getElementById.innerHTML = current.question;
 			function yes(){
 				document.getElementById("p").innerHTML = "yes";
 				current = find(current.yes);
