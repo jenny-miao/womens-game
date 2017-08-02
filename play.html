@@ -8,7 +8,7 @@
 		<button type="button" onclick="no()">No</button>
 
 		<p id="p"></p>
-		<img class="img-responsive" src="img/the_asian_girl.png" alt="girl">
+		<img class="img-responsive" src="Screenshots/Screenshots(33).png" alt="girl">
 
 		<script>
 			var canvas = document.getElementById("myCanvas");
@@ -41,10 +41,17 @@
 				return null;
 			}
 
-			var robotics = new Question("hi", "secretary", "no");
-		 	var secretary = new Question("secretary", "yes", "no");
+			var robotics = new Question("You are a girl growing up in Bay Area who wants to join a robtics team at your high school, but they are all boys. Do you join?", "secretary", "wisdata");
+		 	var secretary = new Question("The boys tell you to be secretary instead of participating in the design of the robot. Will you do it?", "DATA", "pageant");
+			var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "DATA", "interview");
+			var interview = new Question("5 years later. You get an interview at a startup and you go in formalo pants and no makeup. The interviewer makes a snarky comment. Do you defend yourself?", "money", "theend");
+			var money = new Question("You get a job at a different company. Your male counterparts get paid more than you. Do you ask for a raise?", "girl power", "theend");
 		  var dictionary = {};
 		 	dictionary[robotics.yes] = secretary;
+			dictionary[secretary.no] = pageant;
+			dictionary[pageant.no] = interview;
+			dictionary[interview.yes] = money;
+			
 
 		 	var current = robotics;
 		 	var following = undefined;
