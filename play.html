@@ -54,10 +54,9 @@
 			
 
 		 	var current = robotics;
-		 	var following = undefined;
-			var yPos = 20;
+		 	var following = undefined
 		 	while (current != null) {
-		 		ctx.fillText(current.question, 20, yPos);
+		 		ctx.fillText(current.question, 20, 100);
 		 		var choice = "ok";
 
 		 		if (choice == "yes") {
@@ -68,7 +67,6 @@
 				}
 
 		 		current = following;
-				yPos += 20;
 			}
 			
 		</script>
