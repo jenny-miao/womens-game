@@ -4,7 +4,6 @@
 		<link href="playcss.css" rel="stylesheet">
 	</head>
 	<body>
-
 		<canvas id="myCanvas" width="100" height="100"></canvas>
 
 		<button id="BAbutton" type="button" onclick="bayarea()">Bay Area, United States</button>
@@ -25,10 +24,10 @@
 				ctx.fillStyle = "#0095DD";
 				ctx.fillText("Hello: ", 8, 20);
 			}
-
 			//----------- code for questions -----------------------------
 			var end = "end"; // so we don't have to write end with quotations all the time
-			
+		 	var current = undefined; // current question displayed
+
 			/*
 			if question/data is end of the story,
 			attributes "yes" and "no"
@@ -47,57 +46,54 @@
 				return null;
 			}
 
-			// all questions to scenarios
+			//----------- all objects for scenarios ----------------------
+			// questions for Bay Area
 			var robotics = new Question("You are a girl growing up in Bay Area who wants to join a robtics team at your high school, but they are all boys. Do you join?", "secretary", "wisdata");
 		 	var secretary = new Question("The boys tell you to be secretary instead of participating in the design of the robot. Will you do it?", "DATA", "pageant");
 			var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "DATA", "interview");
 			var interview = new Question("5 years later. You get an interview at a startup and you go in formalo pants and no makeup. The interviewer makes a snarky comment. Do you defend yourself?", "money", "theend");
 			var money = new Question("You get a job at a different company. Your male counterparts get paid more than you. Do you ask for a raise?", "girl power", "theend");
-			//questions for SA
-		      var SA_sports = new Question("You’re a kid who likes to play sports, but sports are banned in your community. There is a private school, a three mile walk from your home, that allows you to play basketball. Do you try to convince your father to let you go to that school?", "SA_friends", "SA_oldschool");
-		      var SA_oldschool = new Question("You stay at your old school. It’s hot outside and you want to wear something other than your niqab. Do you ask your mom for lighter clothing?", "SA_shamefam", "SA_noprovoke");
-		      var SA_friends = new Question("Unfortunately, you try your best but your parents refuse. You stay at your old school and hang out with your friends. It’s hot outside and you want to wear something other than your niqab. Do you ask your mom for lighter clothing?", "SA_shamefam", "SA_noprovoke");
-		      var SA_noprovoke = new Question("It’s okay. She probably wouldn’t say yes anyway. You don’t want to provoke her. You are 16 now. Your father comes home and tells you that you have a new husband. You realize you have been sold. Do you protest?", "SA_slap", "SA_silence");
-		      var SA_shamefam = new Question("She refuses to allow you to shame the family by wearing clothes like that. You are 16 now. Your father comes home and tells you that you have a new husband. You realize you have been sold. Do you protest?", "SA_slap", "SA_silence");
-		      var SA_silence = new Question("You wait until your wedding day in silence. Your father seems happy. Soon, you will meet your husband. It has been 2 years since you were married to your husband, a man 20 years older than you. Your husband is discontent with you, and he punches and kicks you. You need medical attention, but you need permission from a male relative to be treated. Do you ask your husband for permission?", "SA_lastkick", "SA_ownwound");
-		      var SA_slap = new Question("Your mother slaps you and tells you to behave. The day before you meet your husband, you run away. Before you get far from home, the authorities come and bring you back to your family. You are locked in your room until your wedding day. It has been 2 years since you were married to your husband, a man 20 years older than you. Your husband is discontent with you, and he punches and kicks you. You need medical attention, but you need permission from a male relative to be treated. Do you ask your husband for permission?", "SA_lastkick", "SA_ownwound");
-		      var SA_lastkick = new Question("Your husband becomes even more angry. He gives you one last kick and tells you no. The next day, when your husband is out working, you decide to go to the hospital. However, women are not allowed to drive. Do you ask your father to drive you?", "SA_longdrive", "SA_patchup");
-		      var SA_ownwound = new Question("Your husband leaves you alone, and you tend to your own wounds. The next day, when your husband is out working, you decide to go to the hospital. However, women are not allowed to drive. Do you ask your father to drive you?", "SA_longdrive", "SA_patchup");
-		      var SA_longdrive = new Question("Your father has to attend to other matters. He is too busy to take you on the long drive to the hospital. You stay at home. You realize that you can only live without freedom in this environment. You seek to make a better life for your children. THE END. <br/> Interesting Fact: Saudi Arabia ranks 141/144 for gender equality (World Economic Forum's 2016 Global Gender Gap report).", end, end);
-		      var SA_patchup = new Question("You ask your mother for medicine. Your sister helps you patch up. You realize that you can only live without freedom in this environment. You seek to make a better life for your children. THE END. <br/> Interesting Fact: Saudi Arabia ranks 141/144 for gender equality (World Economic Forum's 2016 Global Gender Gap report).", end, end);
-		      // put keys and values into dictionary
+
+			// questions for Saudi Arabia
+			var SA_sports = new Question("You’re a kid who likes to play sports, but sports are banned in your community. There is a private school, a three mile walk from your home, that allows you to play basketball. Do you try to convince your father to let you go to that school?", "SA_friends", "SA_oldschool");
+			var SA_oldschool = new Question("You stay at your old school. It’s hot outside and you want to wear something other than your niqab. Do you ask your mom for lighter clothing?", "SA_shamefam", "SA_noprovoke");
+			var SA_friends = new Question("Unfortunately, you try your best but your parents refuse. You stay at your old school and hang out with your friends. It’s hot outside and you want to wear something other than your niqab. Do you ask your mom for lighter clothing?", "SA_shamefam", "SA_noprovoke");
+			var SA_noprovoke = new Question("It’s okay. She probably wouldn’t say yes anyway. You don’t want to provoke her. You are 16 now. Your father comes home and tells you that you have a new husband. You realize you have been sold. Do you protest?", "SA_slap", "SA_silence");
+			var SA_shamefam = new Question("She refuses to allow you to shame the family by wearing clothes like that. You are 16 now. Your father comes home and tells you that you have a new husband. You realize you have been sold. Do you protest?", "SA_slap", "SA_silence");
+			var SA_silence = new Question("You wait until your wedding day in silence. Your father seems happy. Soon, you will meet your husband. It has been 2 years since you were married to your husband, a man 20 years older than you. Your husband is discontent with you, and he punches and kicks you. You need medical attention, but you need permission from a male relative to be treated. Do you ask your husband for permission?", "SA_lastkick", "SA_ownwound");
+			var SA_slap = new Question("Your mother slaps you and tells you to behave. The day before you meet your husband, you run away. Before you get far from home, the authorities come and bring you back to your family. You are locked in your room until your wedding day. It has been 2 years since you were married to your husband, a man 20 years older than you. Your husband is discontent with you, and he punches and kicks you. You need medical attention, but you need permission from a male relative to be treated. Do you ask your husband for permission?", "SA_lastkick", "SA_ownwound");
+			var SA_lastkick = new Question("Your husband becomes even more angry. He gives you one last kick and tells you no. The next day, when your husband is out working, you decide to go to the hospital. However, women are not allowed to drive. Do you ask your father to drive you?", "SA_longdrive", "SA_patchup");
+			var SA_ownwound = new Question("Your husband leaves you alone, and you tend to your own wounds. The next day, when your husband is out working, you decide to go to the hospital. However, women are not allowed to drive. Do you ask your father to drive you?", "SA_longdrive", "SA_patchup");
+			var SA_longdrive = new Question("Your father has to attend to other matters. He is too busy to take you on the long drive to the hospital. You stay at home. You realize that you can only live without freedom in this environment. You seek to make a better life for your children. THE END. <br/> Interesting Fact: Saudi Arabia ranks 141/144 for gender equality (World Economic Forum's 2016 Global Gender Gap report).", end, end);
+			var SA_patchup = new Question("You ask your mother for medicine. Your sister helps you patch up. You realize that you can only live without freedom in this environment. You seek to make a better life for your children. THE END. <br/> Interesting Fact: Saudi Arabia ranks 141/144 for gender equality (World Economic Forum's 2016 Global Gender Gap report).", end, end);
+
+			//----------- put questions/answers in dictionary
 			var dictionary = {};
+			// Bay Area
 		 	dictionary[robotics.yes] = secretary;
 			dictionary[secretary.no] = pageant;
 			dictionary[pageant.no] = interview;
 			dictionary[interview.yes] = money;
-		      //Saudi Arabia
-		      dictionary[SA_sports.yes] = SA_friends;
-		      dictionary[SA_sports.no] = SA_oldschool;
-		      dictionary[SA_friends.yes] = SA_shamefam;
-		      dictionary[SA_friends.no] = SA_noprovoke;
-		      dictionary[SA_oldschool.yes] = SA_shamefam;
-		      dictionary[SA_oldschool.no] = SA_noprovoke;
-		      dictionary[SA_shamefam.yes] = SA_slap;
-		      dictionary[SA_shamefam.no] = SA_silence;
-		      dictionary[SA_noprovoke.yes] = SA_slap;
-		      dictionary[SA_noprovoke.no] = SA_silence;
-		      dictionary[SA_silence.yes] = SA_lastkick;
-		      dictionary[SA_silence.no] = SA_ownwound;
-		      dictionary[SA_slap.yes] = SA_lastkick;
-		      dictionary[SA_slap.no] = SA_ownwound;
-		      dictionary[SA_lastkick.yes] = SA_longdrive;
-		      dictionary[SA_lastkick.no] = SA_patchup;
-		      dictionary[SA_ownwound.yes] = SA_longdrive;
-		      dictionary[SA_ownwound.no] = SA_patchup;
-					
 
-			// PLEASE PUT THIS IN CORRECT PLACES AND ALL THAT
-			var wisdata = new Question("wisdata", end, end);
-			dictionary[robotics.no] = wisdata;
-
-			// set current question and print it out
-		 	var current = SA_sports;
+			// Saudi Arabia
+			dictionary[SA_sports.yes] = SA_friends;
+			dictionary[SA_sports.no] = SA_oldschool;
+			dictionary[SA_friends.yes] = SA_shamefam;
+			dictionary[SA_friends.no] = SA_noprovoke;
+			dictionary[SA_oldschool.yes] = SA_shamefam;
+			dictionary[SA_oldschool.no] = SA_noprovoke;
+			dictionary[SA_shamefam.yes] = SA_slap;
+			dictionary[SA_shamefam.no] = SA_silence;
+			dictionary[SA_noprovoke.yes] = SA_slap;
+			dictionary[SA_noprovoke.no] = SA_silence;
+			dictionary[SA_silence.yes] = SA_lastkick;
+			dictionary[SA_silence.no] = SA_ownwound;
+			dictionary[SA_slap.yes] = SA_lastkick;
+			dictionary[SA_slap.no] = SA_ownwound;
+			dictionary[SA_lastkick.yes] = SA_longdrive;
+			dictionary[SA_lastkick.no] = SA_patchup;
+			dictionary[SA_ownwound.yes] = SA_longdrive;
+			dictionary[SA_ownwound.no] = SA_patchup;
 
 			//----------- hide everything before start -------------------
 			document.getElementById("question").style.display = "none";
@@ -109,7 +105,6 @@
 				document.getElementById("question").style.display = "block";
 				document.getElementById("yesbutton").style.display = "inline-block";
 				document.getElementById("nobutton").style.display = "inline-block";
-
 			}
 
 			//----------- function to hide start buttons -----------------
@@ -119,7 +114,6 @@
 				document.getElementById("Cbutton").style.display = "none";
 				document.getElementById("Ebutton").style.display = "none";
 			}
-
 
 			//----------- code for start buttons -------------------------
 			function bayarea() {
@@ -147,21 +141,19 @@
 				show();
 			}
 			
-
-			// functions run when buttons clicked
+			//----------- functions run when buttons clicked -------------
 			function yes(){
 				current = find(current.yes);
 				document.getElementById("question").innerHTML = current.question;
-
 				if (current.yes == end && current.no == end) {
 					document.getElementById("yesbutton").style.display = "none";
 					document.getElementById("nobutton").style.display = "none";
 				}
 			}
+
 			function no(){
 				current = find(current.no);
 				document.getElementById("question").innerHTML = current.question;
-
 				if (current.yes == end && current.no == end) {
 					document.getElementById("yesbutton").style.display = "none";
 					document.getElementById("nobutton").style.display = "none";
