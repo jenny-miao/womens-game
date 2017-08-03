@@ -7,6 +7,11 @@
 
 		<canvas id="myCanvas" width="100" height="100"></canvas>
 
+		<button id="BAbutton" type="button" onclick="bayarea()">Bay Area, United States</button>
+		<button id="SAbutton" type="button" onclick="saudiarabia()">Saudi Arabia</button>
+		<button id="Cbutton" type="button" onclick="china()">China</button>
+		<button id="Ebutton" type="button" onclick="egypt()">Egypt</button>
+
 		<p id="question"></p>
 
 		<button class="button" id="yesbutton" type="button" onclick="yes()">Yes</button>
@@ -90,10 +95,58 @@
 			// PLEASE PUT THIS IN CORRECT PLACES AND ALL THAT
 			var wisdata = new Question("wisdata", end, end);
 			dictionary[robotics.no] = wisdata;
-			
+
 			// set current question and print it out
 		 	var current = SA_sports;
-			document.getElementById("question").innerHTML = current.question;
+
+			//----------- hide everything before start -------------------
+			document.getElementById("question").style.display = "none";
+			document.getElementById("yesbutton").style.display = "none";
+			document.getElementById("nobutton").style.display = "none";
+
+			//----------- function to show everything --------------------
+			function show() {
+				document.getElementById("question").style.display = "initial";
+				document.getElementById("yesbutton").style.display = "initial";
+				document.getElementById("nobutton").style.display = "initial";
+
+			}
+
+			//----------- function to hide start buttons -----------------
+			function hideStart() {
+				document.getElementById("BAbutton").style.display = "none";
+				document.getElementById("SAbutton").style.display = "none";
+				document.getElementById("Cbutton").style.display = "none";
+				document.getElementById("Ebutton").style.display = "none";
+			}
+
+
+			//----------- code for start buttons -------------------------
+			function bayarea() {
+				current = robotics;
+				document.getElementById("question").innerHTML = current.question;
+				hideStart();
+				show();
+			}
+			function saudiarabia() {
+				current = SA_sports;
+				document.getElementById("question").innerHTML = current.question;
+				hideStart();
+				show();
+			}
+			function china() {
+				current = C_advise;
+				document.getElementById("question").innerHTML = current.question;
+				hideStart();
+				show();
+			}
+			function egypt() {
+				current = E_filthy;
+				document.getElementById("question").innerHTML = current.question;
+				hideStart();
+				show();
+			}
+			
 
 			// functions run when buttons clicked
 			function yes(){
