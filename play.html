@@ -2,58 +2,81 @@
 <html>
 	<body>
 
-		<canvas id="myCanvas" width="600" height="600"></canvas>
-
-		<button type="button" onclick="yes()">Yes</button>
-		<button type="button" onclick="no()">No</button>
-
+		<canvas id="myCanvas" width="100" height="100"></canvas>
 
 		<p id="question"></p>
+
+		<button id="yesbutton" type="button" onclick="yes()">Yes</button>
+		<button id="nobutton" type="button" onclick="no()">No</button>
 
 		<script>
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
 			function itemTouched(pointer) {
-		    		ctx.font = "16px Arial";
+				ctx.font = "16px Arial";
 				ctx.fillStyle = "#0095DD";
 				ctx.fillText("Hello: ", 8, 20);
 			}
 
 			//----------- code for questions -----------------------------
+			/*
+			if question/data is end of the story,
+			attributes "yes" and "no"
+			should be called "end"
+			*/
 			function Question(question, yes, no){
 				this.question = question;
-				this.yes = yes;
-				this.no = no;
+				this.yes = yes; // this.yes acts as a connector to the according next question
+				this.no = no; // this.no acts as a connector to the according next question
 			}
 
-			function find(choice) {
-				if (choice in dictionary) {
-					return dictionary[choice];
+			function find(key) {
+				if (key in dictionary) {
+					return dictionary[key]; // returns value in dictionary
 				}
 				return null;
 			}
 
+			// all questions to scenarios
 			var robotics = new Question("You are a girl growing up in Bay Area who wants to join a robtics team at your high school, but they are all boys. Do you join?", "secretary", "wisdata");
 		 	var secretary = new Question("The boys tell you to be secretary instead of participating in the design of the robot. Will you do it?", "DATA", "pageant");
 			var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "DATA", "interview");
 			var interview = new Question("5 years later. You get an interview at a startup and you go in formalo pants and no makeup. The interviewer makes a snarky comment. Do you defend yourself?", "money", "theend");
 			var money = new Question("You get a job at a different company. Your male counterparts get paid more than you. Do you ask for a raise?", "girl power", "theend");
 
+			// put keys and values into dictionary
 			var dictionary = {};
 		 	dictionary[robotics.yes] = secretary;
 			dictionary[secretary.no] = pageant;
 			dictionary[pageant.no] = interview;
 			dictionary[interview.yes] = money;
+
+			// PLEASE PUT THIS IN CORRECT PLACES AND ALL THAT
+			var wisdata = new Question("wisdata", "end", "end");
+			dictionary[robotics.no] = wisdata;
 			
+			// set current question and print it out
 		 	var current = robotics;
 			document.getElementById("question").innerHTML = current.question;
+
+			// functions run when buttons clicked
 			function yes(){
 				current = find(current.yes);
 				document.getElementById("question").innerHTML = current.question;
+
+				if (current.yes == "end" && current.no == "end") {
+					document.getElementById("yesbutton").style.display = "none";
+					document.getElementById("nobutton").style.display = "none";
+				}
 			}
 			function no(){
 				current = find(current.no);
 				document.getElementById("question").innerHTML = current.question;
+
+				if (current.yes == "end" && current.no == "end") {
+					document.getElementById("yesbutton").style.display = "none";
+					document.getElementById("nobutton").style.display = "none";
+				}
 			}
 		</script>
 	</body>
