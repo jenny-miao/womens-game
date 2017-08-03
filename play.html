@@ -18,12 +18,11 @@
 		<button class="button nobutton" id="nobutton" type="button" onclick="no()">No</button>
 
 		<script>
-			window.onload = function() {
-				var canvas = document.getElementById("myCanvas");
-				var ctx = canvas.getContext("2d");
-				var img = document.getElementById("Egypt");
-				ctx.drawImage(img, 0, 0);
-			}
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			var img = document.getElementById("Egypt");
+			ctx.drawImage(img, 0, 0);
+			
 			function itemTouched(pointer) {
 				ctx.font = "16px Arial";
 				ctx.fillStyle = "#0095DD";
