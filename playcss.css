@@ -46,12 +46,12 @@ p.small {
 }
 
 
-.yesbutton:hover {
+#yesbutton:hover {
     background-color: #4CAF50;
     color: white;
 }
 
-.nobutton:hover {
+#nobutton:hover {
     background-color: #4CAF50;
     color: white;
 }
