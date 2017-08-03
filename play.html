@@ -19,6 +19,8 @@
 			}
 
 			//----------- code for questions -----------------------------
+			var end = "end"; // so we don't have to write end with quotations all the time
+			
 			/*
 			if question/data is end of the story,
 			attributes "yes" and "no"
@@ -52,7 +54,7 @@
 			dictionary[interview.yes] = money;
 
 			// PLEASE PUT THIS IN CORRECT PLACES AND ALL THAT
-			var wisdata = new Question("wisdata", "end", "end");
+			var wisdata = new Question("wisdata", end, end);
 			dictionary[robotics.no] = wisdata;
 			
 			// set current question and print it out
@@ -64,7 +66,7 @@
 				current = find(current.yes);
 				document.getElementById("question").innerHTML = current.question;
 
-				if (current.yes == "end" && current.no == "end") {
+				if (current.yes == end && current.no == end) {
 					document.getElementById("yesbutton").style.display = "none";
 					document.getElementById("nobutton").style.display = "none";
 				}
@@ -73,7 +75,7 @@
 				current = find(current.no);
 				document.getElementById("question").innerHTML = current.question;
 
-				if (current.yes == "end" && current.no == "end") {
+				if (current.yes == end && current.no == end) {
 					document.getElementById("yesbutton").style.display = "none";
 					document.getElementById("nobutton").style.display = "none";
 				}
