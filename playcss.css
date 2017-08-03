@@ -17,7 +17,7 @@ p.small {
     left: 420px;
     right: -420px;
     bottom: -191px;
-    border: 2px solid #4CAF50;
+    border: 2px solid #CE03E8;
 }
 #nobutton {
     background-color: white; 
@@ -28,7 +28,7 @@ p.small {
     left: 420px;
     right: -460px;
     bottom: -191px;
-    border: 2px solid #4CAF50;
+    border: 2px solid #CE03E8;
 }
     
 .button {
@@ -47,11 +47,11 @@ p.small {
 
 
 #yesbutton:hover {
-    background-color: #4CAF50;
+    background-color: #CE03E8;
     color: white;
 }
 
 #nobutton:hover {
-    background-color: #4CAF50;
+    background-color: #CE03E8;
     color: white;
 }
