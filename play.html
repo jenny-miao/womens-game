@@ -75,20 +75,24 @@
 
 			// questions for China
 			var C_advice = new Question("You live in rural China with your large family. The sun leaves you with dark skin - or at least skin darker than most Chinese people. Your father gets a better paying job in a more urban area of China and decides to move your family. Once in the city, you want to get a job at a business company nearby. Do you ask your mom for advice?", "C_discouraged", "C_quit");
-			var C_discouraged = new Question("She discourages you from leaving the family to get a job. You don’t get the job, and you stay at home to take care of the household until you get married. While at home, your mom wants you to wear makeup and more girly clothes. Do you listen to her?", end, "C_boyfriend");
-			var C_boyfriend = new Question("You are 23 years old, and you start dating a guy. You want to marry him, but your parents want to set you up with a family friend’s son. Do you break up with your boyfriend?", end, "C_marry");
-			var C_marry = new Question("Your parents are angry at first, but eventually come around. Now you are happily living with your husband. You have convinced your parents that not all non-traditional things are bad. Congratulations.", end, end);
-			var C_quit = new Question("You get the job, and when you tell your parents that you are making money now, your mother gets angry with you and tells you to quit. Do you quit?", "C_school", "C_comments");
-			var C_school = new Question("You quit your job, but you’re still angry with your mother. You decide to go to school like your brothers instead of living at home. You don’t wear makeup to school and care less about your looks than studying. The other girls in your classes make fun of you for not wearing makeup and having dark skin. Do you listen to them and change to please them?", "C_badbf", end);
-			var C_badbf = new Question("After you look more ladylike, you attract the attention of a guy. You start dating him, but realize he only likes you for your looks. However, your parents want you to be with him. Do you break up?", "C_breakup", "C_marrybad");
-			var C_breakup = new Question("Soon you find someone new. Your parents are angry at first, but eventually come around. Now you are happily living with your husband. You have convinced your parents that not all non-traditional things are bad. Congratulations.", end, end);
-			var C_marrybad = new Question("You marry him and make your parents happy. You live a good life, but promise to support your own kids more fully.", end, end);
-			var C_comments = new Question("You don’t wear makeup to work, and one time your employer makes a comment about how you look even though the men you work with couldn’t care less about how they look. Do you stand up to him?", "C_overdramatic", "C_sexist");
-			var C_overdramatic = new Question("Your boss yells at you for being overdramatic, and you quit. Now, you work for a girl employer. You are 23 years old, and you start dating a guy. You want to marry him, but your parents want to set you up with a family friend’s son. Do you break up with your boyfriend?", "C_relationshipover", "C_marry");
-			var C_relationshipover = new Question("You marry him and make your parents happy. You live a good life, but promise to support your own kids more fully.", end, end);
-			var C_sexist = new Question("Your boss continues to make subtle but sexist comments. You hear him commenting on another employee’s body. Do you stand up for the younger girl?", "C_stand", "C_give");
-			var C_stand = new Question("Congratulations! Despite your difficulties you're willing to defend a woman against sexist stereotypes and people in the world.", end, end);
-			var C_give = new Question("More than 72% of women stated that they were not hired or promoted due to gender discrimination in China in 2016(catalyst.org).", end, end);
+  			var C_discouraged = new Question("She discourages you from leaving the family to get a job. You don’t get the job, and you stay at home to take care of the household until you get married. While at home, your mom wants you to wear makeup and more girly clothes. Do you listen to her?", "C_data1", "C_boyfriend");
+  			var C_data1 = new Question("Shengnu, “leftover woman”, is a term China’s Ministry of Education has added to its official lexicon. It describes an urban professional woman over the age of 27. The prefix, sheng, is the same as in the word shengcai, or “leftover food”(telegraph.co.uk).", end, end);
+			  var C_boyfriend = new Question("You are 23 years old, and you start dating a guy. You want to marry him, but your parents want to set you up with a family friend’s son. Do you break up with your boyfriend?", "C_data2", "C_marry");
+			  var C_data2 = new Question("Under the Communist Party in China women are brought up to think that by 25 they must “fight” and “hunt” for a partner. If not married by 28, they are pressured to “triumph against the odds”. Between 31 and 34, still-unmarried women are referred to as “advanced leftovers”. By 35, a single woman is the “ultimate” leftover, spiritually flawed in thinking she is higher than the mandate of marriage(telegraph.co.uk).", end, end);
+			  var C_marry = new Question("Your parents are angry at first, but eventually come around. Now you are happily living with your husband. You have convinced your parents that not all non-traditional things are bad. Congratulations.", end, end);
+			  var C_quit = new Question("You get the job, and when you tell your parents that you are making money now, your mother gets angry with you and tells you to quit. Do you quit?", "C_school", "C_comments");
+			  var C_school = new Question("You quit your job, but you’re still angry with your mother. You decide to go to school like your brothers instead of living at home. You don’t wear makeup to school and care less about your looks than studying. The other girls in your classes make fun of you for not wearing makeup and having dark skin. Do you listen to them and change to please them?", "C_badbf", "C_data3");
+			  var C_data3 = new Question("Cosmetic surgery has become so common in the country that China accounts for 12.7 percent of all plastic surgeries in the world(tutorming.com).", end, end);
+			  var C_badbf = new Question("After you look more ladylike, you attract the attention of a guy. You start dating him, but realize he only likes you for your looks. However, your parents want you to be with him. Do you break up?", "C_breakup", "C_marrybad");
+			  var C_breakup = new Question("Soon you find someone new. Your parents are angry at first, but eventually come around. Now you are happily living with your husband. You have convinced your parents that not all non-traditional things are bad. Congratulations.", end, end);
+			  var C_marrybad = new Question("You marry him and make your parents happy. You live a good life, but promise to support your own kids more fully. While the traditional practice of arranged marriage has been illegal in China since the 1950s, parents remain heavily involved in their children’s marital decisions (theconversation.com).", end, end);
+			  var C_comments = new Question("You don’t wear makeup to work, and one time your employer makes a comment about how you look even though the men you work with couldn’t care less about how they look. Do you stand up to him?", "C_overdramatic", "C_sexist");
+			  var C_overdramatic = new Question("Your boss yells at you for being overdramatic, and you quit. Now, you work for a girl employer. You are 23 years old, and you start dating a guy. You want to marry him, but your parents want to set you up with a family friend’s son. Do you break up with your boyfriend?", "C_relationshipover", "C_marry");
+			  var C_relationshipover = new Question("You marry him and make your parents happy. You live a good life, but promise to support your own kids more fully. While the traditional practice of arranged marriage has been illegal in China since the 1950s, parents remain heavily involved in their children’s marital decisions (theconversation.com)", end, end);
+			  var C_sexist = new Question("Your boss continues to make subtle but sexist comments. You hear him commenting on another employee’s body. Do you stand up for the younger girl?", "C_stand", "C_give");
+			  var C_stand = new Question("Congratulations! Despite your difficulties you're willing to defend a woman against sexist stereotypes and people in the world.", end, end);
+			  var C_give = new Question("More than 72% of women stated that they were not hired or promoted due to gender discrimination in China in 2016(catalyst.org).", end, end);
+
 
 			// questions for Egypt
 			var E_filthy = new Question("You are 16-years-old and is living with your family. Today, you are going across the city to meet your friend, and you decide to ride the public transportation to get to her house. On the bus, you hear a man say filthy comments at a young woman. Should you confront him?", "E_harass", "E_silence");
@@ -139,20 +143,23 @@
 			
 			// China
 			dictionary[C_advice.yes] = C_discouraged;
-			dictionary[C_advice.no] = C_quit;
-			dictionary[C_discouraged.no] = C_boyfriend;
-			dictionary[C_boyfriend.no] = C_marry;
-			dictionary[C_quit.yes] = C_school;
-			dictionary[C_quit.no] = C_comments;
-			dictionary[C_school.yes] = C_badbf;
-			dictionary[C_badbf.yes] = C_breakup;
-			dictionary[C_badbf.no] = C_marrybad;
-			dictionary[C_comments.yes] = C_overdramatic;
-			dictionary[C_comments.no] = C_sexist;
-			dictionary[C_overdramatic.yes] = C_relationshipover;
-			dictionary[C_overdramatic.no] = C_marry;
-			dictionary[C_sexist.yes] = C_stand;
-			dictionary[C_sexist.no] = C_give;
+		      dictionary[C_advice.no] = C_quit;
+		      dictionary[C_discouraged.no] = C_boyfriend;
+		      dictionary[C_discouraged.yes] = C_data1;
+		      dictionary[C_boyfriend.no] = C_marry;
+		      dictionary[C_boyfriend.yes] = C_data2;
+		      dictionary[C_quit.yes] = C_school;
+		      dictionary[C_quit.no] = C_comments;
+		      dictionary[C_school.yes] = C_badbf;
+		      dictionary[C_school.no] = C_data3;
+		      dictionary[C_badbf.yes] = C_breakup;
+		      dictionary[C_badbf.no] = C_marrybad;
+		      dictionary[C_comments.yes] = C_overdramatic;
+		      dictionary[C_comments.no] = C_sexist;
+		      dictionary[C_overdramatic.yes] = C_relationshipover;
+		      dictionary[C_overedramatic.no] = C_marry;
+		      dictionary[C_sexist.yes] = C_stand;
+		      dictionary[C_sexist.no] = C_give;
 			
 			// Egypt
 			dictionary[E_filthy.yes] = E_harass;
