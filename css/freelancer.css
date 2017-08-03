@@ -514,9 +514,3 @@ fieldset[disabled] .btn-success.active {
 div#maincontent {
   outline: none;
 }
-
-
-#gamepicture {
-  float: none;
-  margin: 0 auto;
-}
