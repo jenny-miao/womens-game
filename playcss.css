@@ -13,10 +13,10 @@ p.small {
     color: black;
     position:relative;
     transition: .5s ease;
-    top: 191px;
+    top: 230px;
     left: 420px;
     right: -420px;
-    bottom: -191px;
+    bottom: -152px;
     border: 2px solid #CE03E8;
 }
 #nobutton {
@@ -24,10 +24,10 @@ p.small {
     color:black;
     position:relative;
     transition: .5s ease;
-    top: 191px;
+    top: 230px;
     left: 420px;
     right: -460px;
-    bottom: -191px;
+    bottom: -152px;
     border: 2px solid #CE03E8;
 }
 
