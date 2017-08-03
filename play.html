@@ -48,11 +48,17 @@
 
 			//----------- all objects for scenarios ----------------------
 			// questions for Bay Area
-			var robotics = new Question("You are a girl growing up in Bay Area who wants to join a robtics team at your high school, but they are all boys. Do you join?", "secretary", "wisdata");
-		 	var secretary = new Question("The boys tell you to be secretary instead of participating in the design of the robot. Will you do it?", "DATA", "pageant");
-			var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "DATA", "interview");
-			var interview = new Question("5 years later. You get an interview at a startup and you go in formalo pants and no makeup. The interviewer makes a snarky comment. Do you defend yourself?", "money", "theend");
-			var money = new Question("You get a job at a different company. Your male counterparts get paid more than you. Do you ask for a raise?", "girl power", "theend");
+			var robotics = new Question("You are a girl growing up in Bay Area who wants to join a robtics team at your high school, but they are all boys. Do you join?", "secretary", "data1");
+		      var data1 = new Question("Only 10.7% of electrical or computer hardware engineers are women(ngcproject.org)", end, end);
+			var secretary = new Question("The boys tell you to be secretary instead of participating in the design of the robot. Will you do it?", "data2", "pageant");
+		      var data2 = new Question("Harvard’s global online research study, which included over 200,000 participants, showed that 76% of people (men and women) are gender-biased and tend to think of men as better suited for careers and women as better suited as homemakers(Forbes).", end, end);
+		      var pageant = new Question("Your mom wants you to take beauty pageant classes at the same time as robotics. Do you comply?", "data3", "interview");
+		      var data3 = new Question("A new survey commissioned by Microsoft (MSFT, Tech30) found that young girls in Europe become interested in so-called STEM subjects around the age of 11 and then quickly lose interest when they're 15. Six in 10 girls admitted they'd feel more confident pursuing a STEM career if they knew men and women were already equally employed in these fields(cnntech).", end, end);
+			var interview = new Question("5 years later. You get an interview at a startup and you go in formal pants and no makeup. The interviewer makes a snarky comment. Do you defend yourself?", "money", "data4");
+		      var data4 = new Question("60 percent of women in tech reported unwanted sexual advances, 65 percent of those women had received those advances from a superior at work, 90 percent of women witnessed sexist behavior at company offsites or at a conference, and 84 percent of those surveyed were at one point told they were “too aggressive” in the office(vogue).", end, end);
+			var money = new Question("You get a job at a different company. Your male counterparts get paid more than you. Do you ask for a raise?", "girlpower", "data5");
+		      var data5 = new Question("Research shows men are four times more likely than women to ask for a salary raise, and economist Linda Babcock of Carnegie Mellon University says this has a snowball effect. Even a small pay boost will mean bigger annual raises and possibly bigger bonuses and it will carry over to a new employer, who is almost certain to ask: What was your last salary(NPR)?", end, end);
+		      var girlpower = new Question("Girl power!", end, end);
 
 			// questions for Saudi Arabia
 			var SA_sports = new Question("You’re a kid who likes to play sports, but sports are banned in your community. There is a private school, a three mile walk from your home, that allows you to play basketball. Do you try to convince your father to let you go to that school?", "SA_friends", "SA_oldschool");
@@ -101,9 +107,15 @@
 			var dictionary = {};
 			// Bay Area
 		 	dictionary[robotics.yes] = secretary;
+      			dictionary[robotics.no] = data1;
 			dictionary[secretary.no] = pageant;
+      			dictionary[secretary.yes] = data2;
 			dictionary[pageant.no] = interview;
+      			dictionary[pageant.yes] = data3;
 			dictionary[interview.yes] = money;
+      			dictionary[interview.no] = data4;
+      			dictionary[money.yes] = girlpower;
+      			dictionary[money.no] = data5;
 
 			// Saudi Arabia
 			dictionary[SA_sports.yes] = SA_friends;
