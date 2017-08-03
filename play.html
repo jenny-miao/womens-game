@@ -67,6 +67,23 @@
 			var SA_longdrive = new Question("Your father has to attend to other matters. He is too busy to take you on the long drive to the hospital. You stay at home. You realize that you can only live without freedom in this environment. You seek to make a better life for your children. THE END. <br/> Interesting Fact: Saudi Arabia ranks 141/144 for gender equality (World Economic Forum's 2016 Global Gender Gap report).", end, end);
 			var SA_patchup = new Question("You ask your mother for medicine. Your sister helps you patch up. You realize that you can only live without freedom in this environment. You seek to make a better life for your children. THE END. <br/> Interesting Fact: Saudi Arabia ranks 141/144 for gender equality (World Economic Forum's 2016 Global Gender Gap report).", end, end);
 
+			//questions for China
+			var C_advice = new Question("You live in rural China with your large family. The sun leaves you with dark skin - or at least skin darker than most Chinese people. Your father gets a better paying job in a more urban area of China and decides to move your family. Once in the city, you want to get a job at a business company nearby. Do you ask your mom for advice?", "C_discouraged", "C_quit");
+		  var C_discouraged = new Question("She discourages you from leaving the family to get a job. You don’t get the job, and you stay at home to take care of the household until you get married. While at home, your mom wants you to wear makeup and more girly clothes. Do you listen to her?", end, "C_boyfriend");
+		  var C_boyfriend = new Question("You are 23 years old, and you start dating a guy. You want to marry him, but your parents want to set you up with a family friend’s son. Do you break up with your boyfriend?", end, "C_marry");
+		  var C_marry = new Question("Your parents are angry at first, but eventually come around. Now you are happily living with your husband. You have convinced your parents that not all non-traditional things are bad. Congratulations.", end, end);
+		  var C_quit = new Question("You get the job, and when you tell your parents that you are making money now, your mother gets angry with you and tells you to quit. Do you quit?", "C_school", "C_comments");
+		  var C_school = new Question("You quit your job, but you’re still angry with your mother. You decide to go to school like your brothers instead of living at home. You don’t wear makeup to school and care less about your looks than studying. The other girls in your classes make fun of you for not wearing makeup and having dark skin. Do you listen to them and change to please them?", "C_badbf", end);
+		  var C_badbf = new Question("After you look more ladylike, you attract the attention of a guy. You start dating him, but realize he only likes you for your looks. However, your parents want you to be with him. Do you break up?", "C_breakup", "C_marrybad");
+		  var C_breakup = new Question("Soon you find someone new. Your parents are angry at first, but eventually come around. Now you are happily living with your husband. You have convinced your parents that not all non-traditional things are bad. Congratulations.", end, end);
+		  var C_marrybad = new Question("You marry him and make your parents happy. You live a good life, but promise to support your own kids more fully.", end, end);
+		  var C_comments = new Question("You don’t wear makeup to work, and one time your employer makes a comment about how you look even though the men you work with couldn’t care less about how they look. Do you stand up to him?", "C_overdramatic", "C_sexist");
+		  var C_overdramatic = new Question("Your boss yells at you for being overdramatic, and you quit. Now, you work for a girl employer. You are 23 years old, and you start dating a guy. You want to marry him, but your parents want to set you up with a family friend’s son. Do you break up with your boyfriend?", "C_relationshipover", "C_marry");
+		  var C_relationshipover = new Question("You marry him and make your parents happy. You live a good life, but promise to support your own kids more fully.", end, end);
+		  var C_sexist = new Question("Your boss continues to make subtle but sexist comments. You hear him commenting on another employee’s body. Do you stand up for the younger girl?", "C_stand", "C_give");
+		  var C_stand = new Question("Congratulations! Despite your difficulties you're willing to defend a woman against sexist stereotypes and people in the world.", end, end);
+		  var C_give = new Question("More than 72% of women stated that they were not hired or promoted due to gender discrimination in China in 2016(catalyst.org).", end, end);
+
 			//----------- put questions/answers in dictionary
 			var dictionary = {};
 			// Bay Area
@@ -94,6 +111,24 @@
 			dictionary[SA_lastkick.no] = SA_patchup;
 			dictionary[SA_ownwound.yes] = SA_longdrive;
 			dictionary[SA_ownwound.no] = SA_patchup;
+			
+			//China
+			dictionary[C_advice.yes] = C_discouraged;
+		      dictionary[C_advice.no] = C_quit;
+		      dictionary[C_discouraged.no] = C_boyfriend;
+		      dictionary[C_boyfriend.no] = C_marry;
+		      dictionary[C_quit.yes] = C_school;
+		      dictionary[C_quit.no] = C_comments;
+		      dictionary[C_school.yes] = C_badbf;
+		      dictionary[C_badbf.yes] = C_breakup;
+		      dictionary[C_badbf.no] = C_marrybad;
+		      dictionary[C_comments.yes] = C_overdramatic;
+		      dictionary[C_comments.no] = C_sexist;
+		      dictionary[C_overdramatic.yes] = C_relationshipover;
+		      dictionary[C_overedramatic.no] = C_marry;
+		      dictionary[C_sexist.yes] = C_stand;
+		      dictionary[C_sexist.no] = C_give;
+
 
 			//----------- hide everything before start -------------------
 			document.getElementById("question").style.display = "none";
@@ -129,7 +164,7 @@
 				show();
 			}
 			function china() {
-				current = C_advise;
+				current = C_advice;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
 				show();
