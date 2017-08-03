@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<canvas id="myCanvas" width="900" height="700"></canvas>
-		<img id="egypt" align="left" width="900" height="700" src="img/egypt_background.png" alt="Egypt">
+		<img id="egypt" width="900" height="700" src="img/egypt_background.png" alt="Egypt">
 
 		<button class="button BAbutton" id="BAbutton" type="button" onclick="bayarea()">Bay Area, United States</button>
 		<button class="button SAbutton" id="SAbutton" type="button" onclick="saudiarabia()">Saudi Arabia</button>
@@ -22,7 +22,7 @@
 				var canvas = document.getElementById("myCanvas");
 				var ctx = canvas.getContext("2d");
 				var img = document.getElementById("Egypt");
-				ctx.drawImage(img, 10, 10);
+				ctx.drawImage(img, 0, 0);
 			}
 			function itemTouched(pointer) {
 				ctx.font = "16px Arial";
