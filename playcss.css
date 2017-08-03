@@ -9,6 +9,7 @@ p.small {
   font-size: 16px;
 }
 #yesbutton {
+    background-color: white; 
     position:relative;
     transition: .5s ease;
     top: 191px;
@@ -18,6 +19,7 @@ p.small {
     border: 2px solid #4CAF50;
 }
 #nobutton {
+    background-color: white; 
     position:relative;
     transition: .5s ease;
     top: 191px;
