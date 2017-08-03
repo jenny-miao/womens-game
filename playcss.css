@@ -14,7 +14,7 @@ p.small {
     position:relative;
     transition: .5s ease;
     top: 230px;
-    left: 420px;
+    left: 100px;
     right: -420px;
     bottom: -152px;
     border: 2px solid #CE03E8;
@@ -25,7 +25,7 @@ p.small {
     position:relative;
     transition: .5s ease;
     top: 230px;
-    left: 420px;
+    left: 200px;
     right: -460px;
     bottom: -152px;
     border: 2px solid #CE03E8;
