@@ -70,10 +70,11 @@ canvas {
 }
 #restartbutton {
    border: 2px solid #FF476E;
+   font-size: 12px;
 }
   
 #restartbutton:hover {
   background-color: #FF476E;
-  color:white
+  color:white;
 }
   
