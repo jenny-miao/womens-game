@@ -7,6 +7,7 @@
 		<p align="center">
 			<canvas id="myCanvas" align="center" width="800" height="600"></canvas>
 		</p>
+		<img id="egyptBackground" width="800" height="600" src="Egypt background.jpg" alt="Egypt background">
 		
 		<div id="startButtons">
 			<button class="button" id="BAbutton" type="button" onclick="bayarea()">Bay Area, United States</button>
@@ -22,8 +23,10 @@
 
 		<script>
 			var canvas = document.getElementById("myCanvas");
-			
 			var ctx = canvas.getContext("2d");
+			var img = document.getElementById("egyptBackground");
+			ctx.drawImage(img, 0, 0);
+}
 
 			function itemTouched(pointer) {
 				ctx.font = "16px Arial";
