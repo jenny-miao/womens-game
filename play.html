@@ -16,10 +16,14 @@
 			<button class="button" id="Ebutton" type="button" onclick="egypt()">Egypt</button>
 		</div>
 
-		<p id="question"></p>
+		<div id="playContent">
+			<p id="question"></p>
 
-		<button class="button yesNo" id="yesbutton" type="button" onclick="yes()">Yes</button>
-		<button class="button yesNo" id="nobutton" type="button" onclick="no()">No</button>
+			<div id="choiceButtons">
+				<button class="button yesNo" id="yesbutton" type="button" onclick="yes()">Yes</button>
+				<button class="button yesNo" id="nobutton" type="button" onclick="no()">No</button>
+			</div>
+		</div>
 
 		<script>
 			var canvas = document.getElementById("myCanvas");
