@@ -64,11 +64,14 @@ img {
   margin: auto;
 }
 
-canvas{
+canvas {
   border: 10px solid black;
   display: inline;
 }
-
+#restartbutton {
+   border: 2px solid #FF476E;
+}
+  
 #restartbutton:hover {
   background-color: #FF476E;
   color:white
