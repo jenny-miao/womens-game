@@ -12,7 +12,11 @@
 		<img id="americaBackground" width="800" height="600" src="img/bayarea-background.png" alt="America background">
 		<img id="chinaBackground" width="800" height="600" src="img/panda-china-background.png" alt="China background">
 		<img id="SABackground" width="800" height="600" src="img/SA_background.png" alt="SA background">
-		<img id="USGirl" width="10" src="img/US_girl.png" alt="US girl">
+		
+		<img id="USGirl" src="img/US_girl.png" alt="US girl">
+		<img id="SAGirl" src="img/SA_girl.png" alt="SA girl">
+		<img id="CGirl" src="img/the_asian_girl.png" alt="China girl">
+		<img id="EGirl" src="img/hijab.png" alt="Egyptian girl">
 		
 		<div id="startButtons">
 			<button class="button" id="BAbutton" type="button" onclick="bayarea()">Bay Area, United States</button>
@@ -40,6 +44,9 @@
 			var E_img = document.getElementById("egyptBackground");
 			
 			var us_girl = document.getElementById("USGirl");
+			var sa_girl = document.getElementById("SAGirl");
+			var c_girl = document.getElementById("CGirl");
+			var e_girl = document.getElementById("EGirl");
 
 			ctx.drawImage(start_img, 0, 0);
 			
@@ -231,6 +238,7 @@
 			}
 			function saudiarabia() {
 				ctx.drawImage(SA_img, 0, 0);
+				ctx.drawImage(sa_girl, 0, 0);
 				current = SA_sports;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
@@ -238,6 +246,7 @@
 			}
 			function china() {
 				ctx.drawImage(C_img, 0, 0);
+				ctx.drawImage(c_girl, 0, 0);
 				current = C_advice;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
@@ -245,6 +254,7 @@
 			}
 			function egypt() {
 				ctx.drawImage(E_img, 0, 0);
+				ctx.drawImage(e_girl, 0, 0);
 				current = E_filthy;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
