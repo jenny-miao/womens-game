@@ -19,6 +19,8 @@
 		<script>
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "blue";
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
 			function itemTouched(pointer) {
 				ctx.font = "16px Arial";
 				ctx.fillStyle = "#0095DD";
