@@ -2,12 +2,11 @@ body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
+
 p {
   font-size: 20px;
 }
-p.small {
-  font-size: 16px;
-}
+
 #yesNo {
     background-color: white;
     color: black;
@@ -36,7 +35,6 @@ p.small {
     border: 2px solid #CE03E8;
 }
 
-
 #yesbutton:hover {
     background-color: #CE03E8;
     color: white;
@@ -46,13 +44,18 @@ p.small {
     background-color: #CE03E8;
     color: white;
 }
+
 .button:hover {
     background-color: #CE03E8;
     color: white;
 }
+
+#startButtons {
+  text-align: center;
+  margin: auto;
+}
+
 canvas{
   border: 10px solid black;
   display: inline;
 }
-#mycanvas{
-  background:img/egypt_background.png
