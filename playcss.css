@@ -50,8 +50,13 @@ p {
     color: white;
 }
 
-#startButtons {
+#startButtons, #choiceButtons {
   text-align: center;
+  margin: auto;
+}
+
+#playContent {
+  width: 1000px;
   margin: auto;
 }
 
