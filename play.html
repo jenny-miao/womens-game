@@ -12,7 +12,7 @@
 		<img id="americaBackground" width="800" height="600" src="img/bayarea-background.png" alt="America background">
 		<img id="chinaBackground" width="800" height="600" src="img/panda-china-background.png" alt="China background">
 		<img id="SABackground" width="800" height="600" src="img/SA_background.png" alt="SA background">
-		<img id="USGirl" width="50" src="img/US_girl.png" alt="US girl">
+		<img id="USGirl" width="10" src="img/US_girl.png" alt="US girl">
 		
 		<div id="startButtons">
 			<button class="button" id="BAbutton" type="button" onclick="bayarea()">Bay Area, United States</button>
@@ -42,7 +42,6 @@
 			var us_girl = document.getElementById("USGirl");
 
 			ctx.drawImage(start_img, 0, 0);
-			ctx.drawImage(us_girl, 0, 0);
 			
 			//----------- code for questions -----------------------------
 			var end = "end"; // so we don't have to write end with quotations all the time
@@ -224,6 +223,7 @@
 			//----------- code for start buttons -------------------------
 			function bayarea() {
 				ctx.drawImage(img, 0, 0);
+				ctx.drawImage(us_girl, 0, 0);
 				current = robotics;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
