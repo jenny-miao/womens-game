@@ -514,3 +514,7 @@ fieldset[disabled] .btn-success.active {
 div#maincontent {
   outline: none;
 }
+#meet {
+  float: none;
+  margin: 0 auto;
+}
