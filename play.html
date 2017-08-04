@@ -32,16 +32,14 @@
 		<script>
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
+			var start_img = document.getElementById("startBackground");
 			var img = document.getElementById("americaBackground");
 			var SA_img = document.getElementById("SABackground");
 			var C_img = document.getElementById("chinaBackground");
 			var E_img = document.getElementById("egyptBackground");
 
-			function itemTouched(pointer) {
-				ctx.font = "16px Arial";
-				ctx.fillStyle = "#0095DD";
-				ctx.fillText("Hello: ", 8, 20);
-			}
+			ctx.drawImage(start_img, 0, 0);
+			
 			//----------- code for questions -----------------------------
 			var end = "end"; // so we don't have to write end with quotations all the time
 		 	var current = undefined; // current question displayed
