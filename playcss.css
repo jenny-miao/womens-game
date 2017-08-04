@@ -8,21 +8,10 @@ p {
 p.small {
   font-size: 16px;
 }
-#yesbutton {
+#yesNo {
     background-color: white;
     color: black;
-    position:relative;
-    transition: .5s ease;
-    top: 230px;
-    left: 100px;
-    right: -420px;
-    bottom: -152px;
-    border: 2px solid #CE03E8;
-}
-#nobutton {
-    background-color: white;
-    color:black;
-    position:relative;
+    position: relative;
     transition: .5s ease;
     top: 230px;
     left: 200px;
@@ -61,7 +50,7 @@ p.small {
     background-color: #CE03E8;
     color: white;
 }
-canvas{ 
-  border: 10px solid black; 
+canvas{
+  border: 10px solid black;
   display: inline;
 }
