@@ -63,4 +63,8 @@ p.small {
 }
 canvas{ 
   border: 5px solid black; 
+  display: inline;
 }
+#myCanvas {
+  width: 100%;
+  text-align:center;
