@@ -31,7 +31,10 @@
 		<script>
 			var canvas = document.getElementById("myCanvas");
 			var ctx = canvas.getContext("2d");
-			var img = document.getElementById("egyptBackground");
+			var img = document.getElementById("americaBackground");
+			var SA_img = document.getElementById("SABackground");
+			var C_img = document.getElementById("chinaBackground");
+			var E_img = document.getElementById("egyptBackground");
 			ctx.drawImage(img, 0, 0);
 
 			function itemTouched(pointer) {
@@ -218,24 +221,28 @@
 
 			//----------- code for start buttons -------------------------
 			function bayarea() {
+				ctx.drawImage(img, 0, 0);
 				current = robotics;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
 				show();
 			}
 			function saudiarabia() {
+				ctx.drawImage(SA_img, 0, 0);
 				current = SA_sports;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
 				show();
 			}
 			function china() {
+				ctx.drawImage(C_img, 0, 0);
 				current = C_advice;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
 				show();
 			}
 			function egypt() {
+				ctx.drawImage(E_img, 0, 0);
 				current = E_filthy;
 				document.getElementById("question").innerHTML = current.question;
 				hideStart();
