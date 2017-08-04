@@ -68,3 +68,9 @@ canvas{
   border: 10px solid black;
   display: inline;
 }
+
+#restartbutton:hover {
+  background-color: #FF476E;
+  color:white
+}
+  
