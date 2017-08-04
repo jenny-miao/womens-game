@@ -61,3 +61,6 @@ p.small {
     background-color: #CE03E8;
     color: white;
 }
+canvas{ 
+  border: 1px solid black; 
+}
