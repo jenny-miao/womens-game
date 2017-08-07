@@ -6,11 +6,28 @@
     <style>
     	* { padding: 0; margin: 0; }
     	canvas { background: #eee; display: block; margin: 0 auto; }
+
+      p {
+        font-size: 50px;
+        text-align: center;
+        margin: auto;
+        display: none;
+      }
+      #message {
+        padding-top: 100px;
+      }
     </style>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
 
   <canvas id="myCanvas" width="800" height="600"></canvas>
+
+  <p id="message">YOU WIN</p>
+  <p id="extra">this was supposed to be the glass ceiling breaking...</p>
+  <p id="moreExtra">hope you likey</p>
 
   <script>
 	// JavaScript code goes here
@@ -102,8 +119,10 @@
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATULATIONS!");
-                        document.location.reload();
+                        $( "#myCanvas" ).toggle( "explode" );
+                        setTimeout(function() {document.getElementById("message").style.display = "block";}, 1000);
+                        setTimeout(function() {document.getElementById("extra").style.display = "block";}, 3000);
+                        setTimeout(function() {document.getElementById("moreExtra").style.display = "block";}, 5000);
                     }
                 }
             }
@@ -132,8 +151,9 @@
             dy = -dy;
           }
           else {
-            alert("GAME OVER");
-            document.location.reload();
+            document.getElementById("message").innerHTML = "YOU LOSE";
+            setTimeout(function() {document.getElementById("message").style.display = "block";}, 1000);
+            setTimeout(function() {document.location.reload();}, 2000);
           }
           }
       x += dx;
