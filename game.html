@@ -17,8 +17,8 @@
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var my_gradient = ctx.createLinearGradient(0, 0, 0, 170);
-    my_gradient.addColorStop(0, "black");
-    my_gradient.addColorStop(1, "white");
+    my_gradient.addColorStop(0, #E1EAFF);
+    my_gradient.addColorStop(1, #ffffff);
     var x = canvas.width/2;
     var y = canvas.height-30;
     var dx = 2;
@@ -69,7 +69,6 @@
             ctx.beginPath();
             ctx.rect(brickX, brickY, brickWidth, brickHeight);
             ctx.fillStyle = my_gradient;
-	    ctx.fillRect(20, 20, 150, 100);
             ctx.fill();
             ctx.closePath();
           }
