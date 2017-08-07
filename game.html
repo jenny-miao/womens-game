@@ -120,6 +120,8 @@
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
+                        y = 300;
+                        dy = 0;
                         $( "#myCanvas" ).toggle( "explode" );
                         setTimeout(function() {document.getElementById("message").style.display = "block";}, 1000);
                         setTimeout(function() {document.getElementById("extra").style.display = "block";}, 3000);
@@ -152,6 +154,8 @@
             dy = -dy;
           }
           else {
+            y = 300;
+            dy = 0;
             setTimeout(function() {document.getElementById("lose").style.display = "block";}, 1000);
             setTimeout(function() {document.location.reload();}, 2000);
           }
