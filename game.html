@@ -26,6 +26,7 @@
   <canvas id="myCanvas" width="800" height="600"></canvas>
 
   <p id="message">YOU WIN</p>
+  <p id="lose">YOU LOSE</p>
   <p id="extra">this was supposed to be the glass ceiling breaking...</p>
   <p id="moreExtra">hope you likey</p>
 
@@ -151,8 +152,7 @@
             dy = -dy;
           }
           else {
-            document.getElementById("message").innerHTML = "YOU LOSE";
-            setTimeout(function() {document.getElementById("message").style.display = "block";}, 1000);
+            setTimeout(function() {document.getElementById("lose").style.display = "block";}, 1000);
             setTimeout(function() {document.location.reload();}, 2000);
           }
           }
